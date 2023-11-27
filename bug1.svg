@@ -1,0 +1,1 @@
+<svg><script>alert('xss found!')</script></svg>
