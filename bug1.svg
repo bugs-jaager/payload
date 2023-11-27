@@ -1,1 +1,13 @@
-<object><svg><script>alert('xss found!')</script></svg></object>
+<svg
+  viewBox="0 0 10 10"
+  height="120px"
+  width="120px"
+  xmlns="http://www.w3.org/2000/svg">
+  <circle id="some_most_certainly_non_existing_id" cx="5" cy="5" r="4" />
+  <script>
+    let elem = document.getElementById('some_most_certainly_non_existing_id');
+    elem.addEventListener("click", e => {
+      alert('xss found!');
+    });
+  </script>
+</svg>
